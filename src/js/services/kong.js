@@ -4,7 +4,7 @@
 angular.module('app')
     .factory('Kong', ['$http', '$q', '$cookies', 'Alert', function ($http, $q, $cookies, Alert) {
         var config = {
-            url : $cookies.getObject('config.url'),
+            url : '/api',
             auth : { type : "no_auth" }
         };
 

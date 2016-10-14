@@ -69,7 +69,7 @@
                 <!-- anything but checkbox first -->
                 <div ng-show="plugin_schema_loaded" ng-repeat="(field, attr) in plugin_schema.fields" ng-if="isPublic(field) && attr.type!=='boolean'">
                     <div ng-if="attr.type!=='table'" class="input-field col s12">
-                        <input ng-if="attr.type==='string'" type="text" id="{{field}}" ng-model="plugin.config[field]" class="validate" />
+                        <textarea ng-if="attr.type==='string'" type="text" id="{{field}}" ng-model="plugin.config[field]" class="validate" />
                         <input ng-if="attr.type==='number'" type="text" id="{{field}}" ng-model="plugin.config[field]" class="validate" />
                         <input ng-if="attr.type==='array' && !attr.enum" type="text" id="{{field}}" ng-model="plugin.config[field]" class="validate" />
                         <input ng-if="attr.type==='url'"    type="text" id="{{field}}" ng-model="plugin.config[field]" class="validate" />

@@ -32,6 +32,13 @@
                     <label for="custom_id" ng-class="{active:consumer.custom_id}">Custom id</label>
                     <app-field-error error="error.custom_id"></app-field-error>
                 </div>
+		<div class="input-field col s12">
+                    <input id="roles" ng-model="consumer.roles" type="text" class="validate"
+                           ng-class="{invalid: error.roles}">
+                    <label for="roles" ng-class="{active:consumer.roles}">Roles</label>
+                    <app-field-error error="error.roles"></app-field-error>
+                </div>
+
                 <div class="input-field col s12">
                     <button type="submit" class="waves-effect waves-light btn right">
                         {{action}}

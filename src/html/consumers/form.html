@@ -38,7 +38,12 @@
                     <label for="roles" ng-class="{active:consumer.roles}">Roles</label>
                     <app-field-error error="error.roles"></app-field-error>
                 </div>
-
+		<div class="input-field col s12">
+                    <input id="tenant" ng-model="consumer.tenant" type="text" class="validate"
+                           ng-class="{invalid: error.tenant}">
+                    <label for="tenant" ng-class="{active:consumer.tenant}">Tenant</label>
+                    <app-field-error error="error.tenant"></app-field-error>
+                </div>
                 <div class="input-field col s12">
                     <button type="submit" class="waves-effect waves-light btn right">
                         {{action}}

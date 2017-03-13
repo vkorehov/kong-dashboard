@@ -5,3 +5,4 @@ node_modules/
 public/
 src/scss/_custom_theme.scss
 .vagrant
+/*.lnk

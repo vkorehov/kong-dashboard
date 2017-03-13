@@ -5,7 +5,7 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input ng-model="config.url" placeholder="/api" id="kong_url" type="text">
+                    <input ng-model="config.url" placeholder="http://127.0.0.1:8001/api" id="kong_url" type="text">
                     <label for="kong_url" class="active">Kong node URL</label>
                 </div>
             </div>
@@ -28,6 +28,16 @@
                 <div class="input-field col s6" ng-show="config.auth.type=='basic_auth'">
                     <input ng-model="config.auth.password" id="basic_auth_password" type="password">
                     <label for="basic_auth_password" ng-class="{active:config.auth.password}">Password</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="config.gelato" name="gelato_option" type="checkbox" id="gelato_option" />
+                    <label for="gelato_option">
+                        Gelato Links for Consumers - If you're using Gelato, This will conditionally create shortcuts
+                        links to the profile page of the same consumer on the gelato dashboard.
+                    </label>
                 </div>
             </div>
 

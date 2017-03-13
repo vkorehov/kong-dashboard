@@ -1,7 +1,5 @@
 # Kong Dashboard
 
-[![](https://badge.imagelayers.io/pgbi/kong-dashboard:latest.svg)](https://imagelayers.io/?images=pgbi/kong-dashboard:latest 'Get your own badge on imagelayers.io')
-
 [**Kong**](https://getkong.org/) is a scalable, open source API Layer (also known as a API Gateway, or API Middleware).
 Kong runs in front of any RESTful API and provide functionalities
 and services such as requests routing, authentication, rate limiting, etc.
@@ -51,6 +49,13 @@ kong-dashboard start
 
 # To start Kong Dashboard on a custom port
 kong-dashboard start -p [port]
+
+# To start Kong Dashboard with basic auth
+kong-dashboard start -a user=password
+
+# You can set basic auth user with environment variables
+# Do not set -a parameter or this will be overwritten
+set kong-dashboard-name=admin && set kong-dashboard-pass=password && kong-dashboard start
 ```
 
 ### From sources
@@ -66,11 +71,13 @@ npm install
 # Start Kong Dashboard
 npm start
 
-# To start Kong Dashboard on a custom port
-npm start -- -p [port]
+# To start Kong Dashboard on a custom port or with basic auth
+npm start -- [-p port] [-a user=password]
 ```
 
 ### With Docker
+
+[![](https://images.microbadger.com/badges/image/pgbi/kong-dashboard.svg)](https://microbadger.com/images/pgbi/kong-dashboard "Get your own image badge on microbadger.com")
 
 ```bash
 # Start Kong Dashboard
@@ -78,6 +85,9 @@ docker run -d -p 8080:8080 pgbi/kong-dashboard
 
 # Start Kong Dashboard on a custom port
 docker run -d -p [port]:8080 pgbi/kong-dashboard
+
+# Start Kong Dashboard with basic auth
+docker run -d -p 8080:8080 pgbi/kong-dashboard npm start -- -a user=password
 ```
 
 
@@ -91,6 +101,12 @@ cd kong-dashboard
 # Start VM
 vagrant up
 ```
+## Configuration
+
+When browsing Kong-Dashboard, you will be asked to provide the URL of your Kong node.
+
+If you're hosting Kong on your local machine, the "Kong node URL" is not "http://localhost:8001".
+It will be your machine/LAN IP, for example: "http://192.168.x.x:8001"
 
 ## Use
 

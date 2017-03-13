@@ -42,9 +42,18 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th>Request host</th>
-            <th>Request path</th>
-            <th>Upstream url</th>
+            <th>Methods</th>
+            <th>Hosts</th>
+            <th>Uris</th>
+            <th>Upstream URL</th>
+            <th title="Strip URI?">SURI?</th>
+            <th title="Preserve Host?">PH?</th>
+            <th title="Retry Count">Retries</th>
+            <th title="Upstream Connect Timeout">UCTO</th>
+            <th title="Upstream Send Timeout">USTO</th>
+            <th title="Upstream Read Timeout">URTO</th>
+            <th title="HTTPS only?">HTSO?</th>
+            <th title="HTTP If Terminated?">HTIT?</th>
             <th>Created</th>
             <th></th>
         </tr>
@@ -53,9 +62,18 @@
         <tbody>
         <tr ng-repeat="api in apis">
             <td>{{api.name}}</td>
-            <td>{{api.request_host}}</td>
-            <td>{{api.request_path}}</td>
+            <td>{{api.methods}}</td>
+            <td>{{api.hosts}}</td>
+            <td>{{api.uris}}</td>
             <td>{{api.upstream_url}}</td>
+            <td>{{api.strip_uri}}</td>
+            <td>{{api.preserve_host}}</td>
+            <td>{{api.retries}}</td>
+            <td>{{api.upstream_connect_timeout}}</td>
+            <td>{{api.upstream_send_timeout}}</td>
+            <td>{{api.upstream_read_timeout}}</td>
+            <td>{{api.https_only}}</td>
+            <td>{{api.http_if_terminated}}</td>
             <td>{{api.created_at | date}}</td>
             <td class="right">
                 <a class="btn-floating waves-effect waves-light" href="#/apis/{{api.id}}">

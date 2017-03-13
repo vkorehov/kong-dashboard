@@ -5,7 +5,7 @@ angular.module('app').controller("ConfigController", ["$scope", "Kong", "Alert",
 
     $scope.update = function() {
         if (!$scope.config.url) {
-            $scope.config.url = "http://localhost:8001";
+            $scope.config.url = "http://127.0.0.1:8001/api";
         }
         if ($scope.config.url.toLowerCase().indexOf("http") == -1) {
             $scope.config.url = "http://" + $scope.config.url;
